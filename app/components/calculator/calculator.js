@@ -9,9 +9,22 @@
     function CalculatorController(){
       var cc = this
       this.myFavNum = 43-1;
-      this.addX = function(x){
-        cc.myFavNum = x + cc.myFavNum;
+
+      this.formulas = {
+        addX: function(x){
+          cc.myFavNum = x + cc.myFavNum;
+        },
+        subX: function(x){
+          cc.myFavNum = cc.myFavNum - x;
+        },
+        mulX: function(x){
+          cc.myFavNum = x * cc.myFavNum;
+        },
+        divX: function(x){
+          cc.myFavNum = cc.myFavNum / x;
+        }
       }
+
     }
 
 }())

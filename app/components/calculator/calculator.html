@@ -2,6 +2,8 @@
   <h3>Calculator Component</h3>
     {{$ctrl.myFavNum}}
     <h4>Child Components Show up below here</h4>
-    <addition-component bwa="$ctrl.myFavNum" formula="$ctrl.addX"></addition-component>
+    <div ng-repeat="(key, formula) in $ctrl.formulas">
+      <math-component formula="formula" formula-name="key" ></math-component>
+    </div>
 
 </div>

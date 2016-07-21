@@ -1,17 +1,17 @@
 (function(){
 
   angular.module('wat')
-    .component('additionComponent', {
+    .component('mathComponent', {
       templateUrl: 'app/components/calculator/addition/addition.html',
       controller: AdditionController,
       bindings: {
         bwa: '<',
-        formula: '<'
+        formula: '<',
+        formulaName: '<'
       } 
     })
 
     function AdditionController(){
-      this.testing = 123;
 
     }
 
