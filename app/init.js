@@ -1,5 +1,8 @@
 (function(){
 
-  angular.module('wat', [])
+  angular.module('wat', [
+    'calculator',
+    'pokemon'
+  ])
 
 }())

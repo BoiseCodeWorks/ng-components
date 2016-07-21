@@ -1,6 +1,6 @@
 (function(){
 
-  angular.module('wat')
+  angular.module('calculator', [])
     .component('calculatorComponent', {
       templateUrl: 'app/components/calculator/calculator.html',
       controller: CalculatorController 

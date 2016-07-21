@@ -1,0 +1,14 @@
+<div>
+  <form ng-submit="$ctrl.addPokemon($ctrl.newPokemon)">
+    <input type="text" placeholder="Name" ng-model="$ctrl.newPokemon.name">
+    <input type="text" placeholder="Element" ng-model="$ctrl.newPokemon.element">
+    <input type="number" placeholder="Combat Power" ng-model="$ctrl.newPokemon.cp">
+    <button type="submit">Add Pokemon</button>
+  </form>
+
+  <ul>
+    <li ng-repeat="pokemon in $ctrl.pokedex">
+      <pokey-component pokey-obj="pokemon" bwa="$ctrl.removePokemon" catch="$ctrl.addPokemon"></pokey-component>
+    </li>
+  </ul>
+</div>

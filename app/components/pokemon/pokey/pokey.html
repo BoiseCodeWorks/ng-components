@@ -1,0 +1,7 @@
+<div>
+  <h3>{{$ctrl.pokeyObj.name}}</h3>
+  <h4>{{$ctrl.pokeyObj.cp}}</h4>
+  <h6>{{$ctrl.pokeyObj.element}}</h6>
+  <button class="btn btn-danger" ng-click="$ctrl.bwa($ctrl.pokeyObj)" ng-if="!$ctrl.pokeyObj.wild">Trash Pokemon</button>
+  <button class="btn btn-info" ng-click="$ctrl.catch($ctrl.pokeyObj)" ng-if="$ctrl.pokeyObj.wild">Catch Pokemon</button>
+</div>
