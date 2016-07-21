@@ -1,4 +1,5 @@
 <div>
+  <h3>{{$ctrl.environment.name}}</h3>
   <form ng-submit="$ctrl.addPokemon($ctrl.newPokemon)">
     <input type="text" placeholder="Name" ng-model="$ctrl.newPokemon.name">
     <input type="text" placeholder="Element" ng-model="$ctrl.newPokemon.element">
@@ -7,8 +8,8 @@
   </form>
 
   <ul>
-    <li ng-repeat="pokemon in $ctrl.pokedex">
-      <pokey-component pokey-obj="pokemon" bwa="$ctrl.removePokemon" catch="$ctrl.addPokemon"></pokey-component>
+    <li ng-repeat="pokey in $ctrl.environment.pokeyList">
+      <pokey-component pokey-obj="pokey" bwa="$ctrl.removePokemon" catch="$ctrl.removePokemon"></pokey-component>
     </li>
   </ul>
 </div>
