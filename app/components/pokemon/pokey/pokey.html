@@ -3,5 +3,6 @@
   <h3>{{$ctrl.pokeyObj.name}}</h3>
   <h4>{{$ctrl.pokeyObj.cp}}</h4>
   <h6>{{$ctrl.pokeyObj.element}}</h6>
+  <p>{{$ctrl.pokeyObj.url}}</p>
   <button class="btn" ng-class="{'btn-info': $ctrl.pokeyObj.wild, 'btn-danger': !$ctrl.pokeyObj.wild }" ng-click="$ctrl.action($ctrl.pokeyObj)">{{$ctrl.pokeyObj.wild ? 'Catch' : 'Trash'}} Pokemon</button>
 </div>
