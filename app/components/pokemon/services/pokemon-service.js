@@ -6,7 +6,7 @@
     PokemonService.$inject = ['$http'];
 
     function PokemonService($http) {
-      
+      var ps = this;
       var masterPokeyList = [];
 
       var baseUrl = 'http://pokeapi.co/api/v2/pokemon/?limit=811&offset=0'
@@ -19,16 +19,18 @@
 
         $http.get(baseUrl).then(function(response){
           saveMasterPokeyList(response.data.results);
-          return successCallback(list);
+          return successCallback(response.data.results);
         }, failCallback);
       }
 
-      this.getRandomPokey = function(){
-        var l = getMasterPokeyList();
-        var randI = Math.floor(Math.random()* l.length);
-        var randPokey = l[randI];
-        randPokey.id = randI + 1;
-        return randPokey;
+      this.getRandomPokey = function(cb){
+        ps.getPokemonList(function(l){
+          var randI = Math.floor(Math.random()* l.length);
+          var randPokey = l[randI];
+          randPokey.id = randI + 1;
+          randPokey.wild = true;
+          return cb(randPokey);
+        });
       }
 
       function saveMasterPokeyList(list){

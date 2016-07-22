@@ -17,10 +17,11 @@
       $interval(function(){
         ec.environment.pokeyList = [];
         for(var i = 0; i < 5; i++){
-          var pokey = PokemonService.getRandomPokey();
-          ec.environment.pokeyList.push(pokey);
+          PokemonService.getRandomPokey(function(pokey){
+            ec.environment.pokeyList.push(pokey);
+          });
         }
-      }, 3000)
+      }, 8000)
 
 
       ec.addPokemon = function(pokey){
