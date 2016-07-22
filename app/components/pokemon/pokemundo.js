@@ -6,8 +6,13 @@
       templateUrl: 'app/components/pokemon/pokemundo.html'
     })
 
-    function PokemonController(){
+    PokemonController.$inject = ['PokedexService'];
+
+    function PokemonController(PokedexService){
       var pc = this;
+
+      this.myPokeys = PokedexService.getPokeyList();
+
 
       pc.environments = {
         grasslands: {
@@ -41,18 +46,12 @@
 
       this.addToPokedex = function(pokey){
         pokey.wild = false;
-        pc.pokedex.pokeyList.push(pokey);
+        PokedexService.addPokey(pokey);
       }
 
       this.removeFromPokedex = function(pokey){
-        var i = pc.pokedex.pokeyList.indexOf(pokey); 
-        pc.pokedex.pokeyList.splice(i, 1);
+        PokedexService.removePokey(pokey);
       }
-
-      this.pokedex = {
-          name: 'Pokedex',
-          pokeyList: []
-        }
 
 
     }

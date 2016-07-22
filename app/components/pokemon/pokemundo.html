@@ -1,6 +1,3 @@
-<!--<pokedex-component></pokedex-component>
-<wilds-component></wilds-component>-->
-
 <div ng-repeat="env in $ctrl.environments">
   <environment-component environment="env" capture="$ctrl.addToPokedex"></environment-component>
 </div>
@@ -15,9 +12,8 @@
   </form>
 
   <ul>
-    <li ng-repeat="pokey in $ctrl.pokedex.pokeyList">
+    <li ng-repeat="pokey in $ctrl.myPokeys">
       <pokey-component pokey-obj="pokey" catch="$ctrl.removeFromPokedex"></pokey-component>
     </li>
   </ul>
-</div>
-
+</div> 
