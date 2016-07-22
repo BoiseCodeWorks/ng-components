@@ -1,4 +1,6 @@
-<div ng-if="!$ctrl.loggedIn">
+<div class="alert alert-danger" ng-if="$ctrl.error">{{$ctrl.error}}</div>
+
+<div ng-if="!$ctrl.loggedIn && !$ctrl.error">
   <h3>Please tell me who you are</h3>
   <form ng-submit="$ctrl.login($ctrl.username)">
     <input type="text" ng-model="$ctrl.username">

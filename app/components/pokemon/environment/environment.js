@@ -9,10 +9,19 @@
       }
     })
 
-    EnvironmentController.$inject = ['PokedexService']
+    EnvironmentController.$inject = ['$interval', 'PokedexService', 'PokemonService']
 
-    function EnvironmentController(PokedexService){
+    function EnvironmentController($interval, PokedexService, PokemonService){
       var ec = this;
+
+      $interval(function(){
+        ec.environment.pokeyList = [];
+        for(var i = 0; i < 5; i++){
+          var pokey = PokemonService.getRandomPokey();
+          ec.environment.pokeyList.push(pokey);
+        }
+      }, 3000)
+
 
       ec.addPokemon = function(pokey){
         ec.environment.pokeyList.push(pokey);
