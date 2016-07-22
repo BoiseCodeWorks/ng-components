@@ -11,7 +11,15 @@
     function PokemonController(PokedexService){
       var pc = this;
 
-      this.myPokeys = PokedexService.getPokeyList();
+      pc.login = function(username){
+        PokedexService.setOwner(username);
+        pc.loggedIn = true;
+      }
+
+      pc.logout = function(){
+        PokedexService.logout();
+        pc.loggedIn = false;
+      }
 
       pc.environments = {
         grasslands: {
