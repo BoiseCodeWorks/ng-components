@@ -6,8 +6,7 @@
       templateUrl: 'app/components/pokemon/pokey/pokey.html',
       bindings:{
         pokeyObj: '<',
-        bwa: '<',
-        catch: '<'
+        action: '<'
       }
     })
     function PokeyController(){

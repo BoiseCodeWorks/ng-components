@@ -1,19 +1,5 @@
 <div ng-repeat="env in $ctrl.environments">
-  <environment-component environment="env" capture="$ctrl.addToPokedex"></environment-component>
+  <environment-component environment="env"></environment-component>
 </div>
 
-<div>
-  <h3>{{$ctrl.pokedex.name}}</h3>
-  <form ng-submit="$ctrl.addToPokedex($ctrl.newPokemon)">
-    <input type="text" placeholder="Name" ng-model="$ctrl.newPokemon.name">
-    <input type="text" placeholder="Element" ng-model="$ctrl.newPokemon.element">
-    <input type="number" placeholder="Combat Power" ng-model="$ctrl.newPokemon.cp">
-    <button type="submit">Add Pokemon</button>
-  </form>
-
-  <ul>
-    <li ng-repeat="pokey in $ctrl.myPokeys">
-      <pokey-component pokey-obj="pokey" catch="$ctrl.removeFromPokedex"></pokey-component>
-    </li>
-  </ul>
-</div> 
+<pokedex-component></pokedex-component>

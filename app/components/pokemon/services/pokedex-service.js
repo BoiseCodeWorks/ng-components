@@ -30,6 +30,7 @@
         }
 
         this.addPokey = function(pokey){
+          pokey.wild = false;
           pokedex.pokeyList.push(pokey);
           savePokedex();
         }

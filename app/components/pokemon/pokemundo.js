@@ -13,7 +13,6 @@
 
       this.myPokeys = PokedexService.getPokeyList();
 
-
       pc.environments = {
         grasslands: {
           name: 'Grasslands',
@@ -43,16 +42,6 @@
           }]
         }
       }
-
-      this.addToPokedex = function(pokey){
-        pokey.wild = false;
-        PokedexService.addPokey(pokey);
-      }
-
-      this.removeFromPokedex = function(pokey){
-        PokedexService.removePokey(pokey);
-      }
-
 
     }
 
