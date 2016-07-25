@@ -17,6 +17,7 @@
         }
 
         function getPokedexFromStorage(){
+          pokedex.owner = localStorage.getItem('lastUser');
           var storedPokedex = localStorage.getItem(`${pokedex.owner}.pokedex`);
           if(storedPokedex){
             pokedex = JSON.parse(storedPokedex);
@@ -25,7 +26,17 @@
 
         this.setOwner = function(name){
           pokedex.owner = name;
+          localStorage.setItem('lastUser', name);
           getPokedexFromStorage();
+        }
+
+
+        this.getOwner = function(name){
+          var user = localStorage.getItem('lastUser');
+          if(user){
+            getPokedexFromStorage();
+            return user
+          }
         }
 
         this.logout = function(){
@@ -34,6 +45,7 @@
             name: 'Pokedex',
             pokeyList: []
           }
+          localStorage.removeItem('lastUser');
         }
 
         this.getPokeyList = function(){

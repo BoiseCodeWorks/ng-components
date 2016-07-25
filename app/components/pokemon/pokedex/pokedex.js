@@ -10,7 +10,8 @@
 
     function PokedexController(PokedexService) {
       var pdc = this;
-
+      PokedexService.getOwner();
+      
       pdc.myPokeys = PokedexService.getPokeyList();
 
       pdc.removeFromPokedex = function(pokey){
