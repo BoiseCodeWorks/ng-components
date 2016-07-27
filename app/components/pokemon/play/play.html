@@ -1,8 +1,7 @@
 <login-component></login-component>
 <div>
   <div ng-repeat="env in $ctrl.environments">
-    <environment-component environment="env"></environment-component>
+    <a ui-sref="environment({environmentName:env.name})">{{env.name}}</a>
   </div>
-
   <pokedex-component></pokedex-component>
 </div>

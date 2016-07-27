@@ -23,6 +23,11 @@
           url: '/play',
           template: '<play-component></play-component>'
         })
+        .state({
+          name: 'environment',
+          url: '/environments/:environmentName',
+          template: '<environment-component></environment-component>'
+        })
     }
 
 }())

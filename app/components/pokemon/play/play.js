@@ -10,14 +10,8 @@
 
   function PlayController(PokemonService) {
     var pc = this;
-    pc.environments = {
-      grasslands: {
-        name: 'Grasslands',
-        weather: 'Sunny',
-        vegitation: 'Grassy',
-        pokeyList: []
-      }
-    }
+
+    pc.environments = PokemonService.getEnvironments()
 
     var count = 0
     function handleError(response) {

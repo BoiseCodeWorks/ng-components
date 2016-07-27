@@ -4,15 +4,18 @@
     .component('environmentComponent', {
       templateUrl: 'app/components/pokemon/environment/environment.html',
       controller: EnvironmentController,
-      bindings: {
-        environment: '<'
-      }
     })
 
-    EnvironmentController.$inject = ['$interval', 'PokedexService', 'PokemonService']
+    EnvironmentController.$inject = ['$state', '$interval', 'PokedexService', 'PokemonService']
 
-    function EnvironmentController($interval, PokedexService, PokemonService){
+    function EnvironmentController($state, $interval, PokedexService, PokemonService){
       var ec = this;
+      
+      ec.environment = PokemonService.getEnvironmentByName($state.params.environmentName);
+
+      if(!ec.environment){
+        $state.go('play')
+      }
 
       $interval(function(){
         ec.environment.pokeyList = [];
